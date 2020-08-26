@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 第一种：对于有参数的构造方法：我们可以使用如下方法， 但是不建议使用第一种，如果两个参数的都是String，不好写，
+     而且参数类型容易写错-->
+    <!--    <bean id="user" class="com.ma.pojo.User">-->
+<!--        <constructor-arg type="java.lang.String" value="小马" />-->
+<!--    </bean>-->
+<!--创建bean的第二种方式。-->
+<!--    <bean id="user" class="com.ma.pojo.User">-->
+<!--        <constructor-arg index="0" value="hahah"/>-->
+<!--    </bean>-->
+
+    <bean id="user" class="com.ma.pojo.User">
+        <constructor-arg name="name" value="tst1" />
+    </bean>
+</beans>

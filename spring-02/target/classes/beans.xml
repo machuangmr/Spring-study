@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.ma.pojo.Address">
+        <property name="address" value="杭州"/>
+    </bean>
+    <bean id="user" class="com.ma.pojo.User">
+        <!--bean的注入方式-->
+        <property name="name" value="test1"/>
+        
+        <!--第二种注入方式：对象注入，我们可以使用一个ref-->
+        <property name="address" ref="address"/>
+        <!--第三种：数组形式-->
+        <property name="works">
+            <array>
+                <value>三国</value>
+            </array>
+        </property>
+        <!--第四种 list-->
+        <property name="books">
+            <value>123123</value>
+        </property>
+        <!--第五种set-->
+        <property name="info">
+            <value>测试</value>
+        </property>
+    <!--第六种 map-->
+    <property name="maps">
+        <map>
+            <entry key="123" value="证件号"/>
+        </map>
+    </property>
+    </bean>
+</beans>
