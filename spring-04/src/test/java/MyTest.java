@@ -15,6 +15,9 @@ public class MyTest {
 
     @Test
     public void testConfig() {
+        /**
+         * 如果完全使用了配置类方式去做，我们就可以使用annotationConfig来获取容器，通过配置类的class属性来加载。
+         */
        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         User getUer = (User)applicationContext.getBean("getUser");
         System.out.println(getUer.getName());
