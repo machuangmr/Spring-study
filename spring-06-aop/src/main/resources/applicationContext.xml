@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--注册bean-->
+    <bean id="userService" class="demo.UserServiceImpl"/>
+    <bean id="beforLog" class="demo.BeforLog"/>
+    <bean id="afterLog" class="demo.AfterLog"/>
+    <!--方式一： 配置aop-->
+<!--    <aop:config>-->
+<!--        &lt;!&ndash;切入点，即我们需要在哪个地方将我们的通知织入进入，需要填写一个execution 表达式&ndash;&gt;-->
+<!--        <aop:pointcut id="pointcut" expression="execution(* demo.UserServiceImpl.*(..))"/>-->
+<!--        &lt;!&ndash;配置通知的方式，即在哪个类使用什么样的通知方式&ndash;&gt;-->
+<!--        <aop:advisor advice-ref="beforLog" pointcut-ref="pointcut"/>-->
+<!--        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
+<!--    </aop:config>-->
+<!--方式二：-->
+<!--    <bean id="diyAspectj" class="demo2.DiyAspectj"/>-->
+<!--    <aop:config>-->
+<!--        &lt;!&ndash;aop 三要素：1、切面  2、切入点 3、通知方式&ndash;&gt;-->
+<!--        <aop:aspect ref="diyAspectj">-->
+<!--            &lt;!&ndash;1、配置切入点&ndash;&gt;-->
+<!--            <aop:pointcut id="pointcut" expression="execution(* demo.UserServiceImpl.*(..))"/>-->
+<!--            &lt;!&ndash;配置相应的通知方式。&ndash;&gt;-->
+<!--            <aop:after method="after" pointcut-ref="pointcut"/>-->
+<!--            <aop:before method="before" pointcut-ref="pointcut"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+    <!--方式三：-->
+    <bean id="annotationAspect" class="demo3.AnnotationAspect"/>
+    <!--打开aop注解驱动-->
+    <aop:aspectj-autoproxy/>
+
+</beans>
