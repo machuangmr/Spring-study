@@ -17,6 +17,7 @@
         <module>spring-06-aop</module>
         <module>mybatis-review</module>
         <module>spring-transcation</module>
+        <module>Spring_SpringMVC</module>
     </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
